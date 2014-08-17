@@ -5,10 +5,15 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	"log"
+	"models"
 	"net/http"
 )
 
 func main() {
+
+	acl.Acl_user()
+
+	return
 	PORT := "3000"
 	m := martini.Classic()
 
@@ -42,7 +47,8 @@ func main() {
 }
 
 func home(r render.Render) {
-	r.HTML(200, "home", "heelo")
+
+	r.HTML(200, "home", "second")
 }
 
 func contactus() string {
